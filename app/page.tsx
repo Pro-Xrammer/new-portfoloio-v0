@@ -1,5 +1,5 @@
 "use client"
-
+import Link from "next/link"
 import { motion } from "framer-motion"
 import {
   ArrowRight,
@@ -32,19 +32,19 @@ import { Navbar } from "@/components/navbar"
 const fadeInUp = {
   initial: { opacity: 0, y: 60 },
   animate: { opacity: 1, y: 0 },
-  transition: { duration: 1, ease: "easeOut" },
+  transition: { duration: 0.6, ease: "easeOut" },
 }
 
 const fadeInLeft = {
   initial: { opacity: 0, x: -60 },
   animate: { opacity: 1, x: 0 },
-  transition: { duration: 1, ease: "easeOut" },
+  transition: { duration: 0.6, ease: "easeOut" },
 }
 
 const fadeInRight = {
   initial: { opacity: 0, x: 60 },
   animate: { opacity: 1, x: 0 },
-  transition: { duration: 1, ease: "easeOut" },
+  transition: { duration: 0.6, ease: "easeOut" },
 }
 
 const staggerContainer = {
@@ -98,50 +98,56 @@ const projects = [
     title: "E-Commerce Platform",
     description:
       "Modern shopping experience with Next.js, featuring cart management, payment integration, and responsive design.",
-    image: "/placeholder.svg?height=300&width=500",
+    image: "/ecom.png",
     tech: ["Next.js", "Tailwind", "Stripe", "Prisma"],
     category: "E-Commerce",
     year: "2024",
+    a: 'https://e-commerce-gamma-flax.vercel.app',
   },
   {
     title: "SaaS Dashboard",
     description: "Analytics dashboard with real-time data visualization, user management, and interactive charts.",
-    image: "/placeholder.svg?height=300&width=500",
+    image: "/saas.png",
     tech: ["React", "Framer Motion", "Chart.js", "Node.js"],
     category: "SaaS",
     year: "2024",
+    a: 'https://saas-app-ecru-zeta.vercel.app',
   },
   {
-    title: "Portfolio Website",
+    title: "Brainwave Website",
     description: "Animated portfolio showcasing creative work with smooth transitions and optimized performance.",
-    image: "/placeholder.svg?height=300&width=500",
+    image: "/brain.png",
     tech: ["Next.js", "Tailwind", "Framer Motion", "MDX"],
     category: "Portfolio",
     year: "2023",
+    a: 'https://brainwave-eight-topaz.vercel.app',
   },
   {
     title: "Task Management App",
     description: "Collaborative project management tool with drag-and-drop functionality and team features.",
-    image: "/placeholder.svg?height=300&width=500",
+    image: "/travel.png",
     tech: ["React", "TypeScript", "Tailwind", "Supabase"],
     category: "Productivity",
     year: "2023",
+    a: 'https://travel-ebon-three.vercel.app',
   },
   {
     title: "Real Estate Platform",
-    description: "Property listing platform with advanced search, virtual tours, and agent management system.",
-    image: "/placeholder.svg?height=300&width=500",
+    description: "A real estate platform offering verified land listings in Gilgit-Baltistan for residential, commercial, and investment purposes.",
+    image: "/real.png",
     tech: ["Next.js", "Tailwind", "Mapbox", "Sanity"],
     category: "Real Estate",
     year: "2024",
+    a: 'https://real-estate-teal-nine.vercel.app/',
   },
   {
-    title: "Learning Management System",
-    description: "Educational platform with course creation, progress tracking, and interactive learning modules.",
-    image: "/placeholder.svg?height=300&width=500",
+    title: "Quick Funds",
+    description: "Quick Funds is a loan service platform designed to help users access personal, business, or auto loans quickly and efficiently.",
+    image: "/quick.png",
     tech: ["React", "Node.js", "MongoDB", "Socket.io"],
     category: "Education",
     year: "2023",
+    a: 'https://quick-funds-five.vercel.app',
   },
 ]
 
@@ -150,7 +156,7 @@ const testimonials = [
     name: "Sarah Johnson",
     role: "CEO, TechStart Inc.",
     company: "TechStart Inc.",
-    image: "/placeholder.svg?height=80&width=80",
+    image: "/women.jpeg",
     content:
       "Working with this developer was an absolute game-changer for our business. The website they built not only looks stunning but also performs incredibly well. Our conversion rate increased by 40% after the launch!",
     rating: 5,
@@ -159,7 +165,7 @@ const testimonials = [
     name: "Michael Chen",
     role: "Product Manager",
     company: "InnovateLab",
-    image: "/placeholder.svg?height=80&width=80",
+    image: "/men2.jpeg",
     content:
       "The attention to detail and technical expertise is outstanding. They delivered a complex dashboard that our team uses daily, and the user experience is phenomenal. Highly recommend!",
     rating: 5,
@@ -168,7 +174,7 @@ const testimonials = [
     name: "Emily Rodriguez",
     role: "Marketing Director",
     company: "GrowthCo",
-    image: "/placeholder.svg?height=80&width=80",
+    image: "/men1.jpeg",
     content:
       "Not only did they create a beautiful website, but they also optimized it for SEO and performance. Our organic traffic doubled within 3 months. The ROI has been incredible!",
     rating: 5,
@@ -177,7 +183,7 @@ const testimonials = [
     name: "David Kim",
     role: "Founder",
     company: "StartupXYZ",
-    image: "/placeholder.svg?height=80&width=80",
+    image: "/men3.jpeg",
     content:
       "Professional, reliable, and incredibly talented. They understood our vision perfectly and brought it to life with modern technologies. The project was delivered on time and exceeded expectations.",
     rating: 5,
@@ -504,41 +510,43 @@ export default function Portfolio() {
                   whileHover={{ y: -12, transition: { duration: 0.3 } }}
                   className="group"
                 >
-                  <Card className="overflow-hidden border-0 shadow-lg hover:shadow-2xl transition-all duration-500 bg-white">
-                    <div className="aspect-video overflow-hidden relative">
-                      <img
-                        src={project.image || "/placeholder.svg"}
-                        alt={project.title}
-                        className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-110"
-                      />
-                      <div className="absolute inset-0 bg-black/30 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
-                      <div className="absolute top-4 right-4">
-                        <Badge className="bg-white text-gray-900">{project.category}</Badge>
+                  <Link href={project.a} target="blank">
+                    <Card className="overflow-hidden border-0 shadow-lg hover:shadow-2xl transition-all duration-500 bg-white">
+                      <div className="aspect-video overflow-hidden relative">
+                        <img
+                          src={project.image || "/placeholder.svg"}
+                          alt={project.title}
+                          className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-110"
+                        />
+                        <div className="absolute inset-0 bg-black/30 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                        <div className="absolute top-4 right-4">
+                          <Badge className="bg-white text-gray-900">{project.category}</Badge>
+                        </div>
+                        <div className="absolute bottom-4 right-4 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                          <Button size="sm" className="bg-white text-gray-900 hover:bg-gray-100">
+                            <ExternalLink className="h-4 w-4" />
+                          </Button>
+                        </div>
                       </div>
-                      <div className="absolute bottom-4 right-4 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                        <Button size="sm" className="bg-white text-gray-900 hover:bg-gray-100">
-                          <ExternalLink className="h-4 w-4" />
-                        </Button>
-                      </div>
-                    </div>
-                    <CardContent className="p-8">
-                      <div className="flex justify-between items-start mb-4">
-                        <h3 className="text-2xl font-bold text-gray-900">{project.title}</h3>
-                        <span className="text-sm text-gray-500 font-medium">{project.year}</span>
-                      </div>
-                      <p className="text-gray-600 mb-6 leading-relaxed">{project.description}</p>
-                      <div className="flex flex-wrap gap-2">
-                        {project.tech.map((tech) => (
-                          <span
-                            key={tech}
-                            className="px-3 py-1 text-xs font-medium bg-purple-100 text-purple-700 rounded-full"
-                          >
-                            {tech}
-                          </span>
-                        ))}
-                      </div>
-                    </CardContent>
-                  </Card>
+                      <CardContent className="p-8">
+                        <div className="flex justify-between items-start mb-4">
+                          <h3 className="text-2xl font-bold text-gray-900">{project.title}</h3>
+                          <span className="text-sm text-gray-500 font-medium">{project.year}</span>
+                        </div>
+                        <p className="text-gray-600 mb-6 leading-relaxed">{project.description}</p>
+                        <div className="flex flex-wrap gap-2">
+                          {project.tech.map((tech) => (
+                            <span
+                              key={tech}
+                              className="px-3 py-1 text-xs font-medium bg-purple-100 text-purple-700 rounded-full"
+                            >
+                              {tech}
+                            </span>
+                          ))}
+                        </div>
+                      </CardContent>
+                    </Card>
+                  </Link>
                 </motion.div>
               ))}
             </div>
