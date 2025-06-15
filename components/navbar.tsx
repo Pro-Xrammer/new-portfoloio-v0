@@ -38,9 +38,8 @@ export function Navbar() {
 
   return (
     <header
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-        scrolled ? "bg-white shadow-md py-3" : "bg-transparent py-5"
-      }`}
+      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${scrolled ? "bg-white shadow-md py-3" : "bg-transparent py-5"
+        }`}
     >
       <div className="container mx-auto px-6 flex items-center justify-between">
         {/* Logo */}
@@ -65,27 +64,33 @@ export function Navbar() {
 
         {/* Social Icons - Desktop */}
         <div className="hidden md:flex items-center space-x-4">
-          <Button
-            variant="ghost"
-            size="icon"
-            className="text-gray-700 hover:text-purple-600 hover:bg-purple-50 rounded-full"
-          >
-            <Github className="h-5 w-5" />
-          </Button>
-          <Button
-            variant="ghost"
-            size="icon"
-            className="text-gray-700 hover:text-purple-600 hover:bg-purple-50 rounded-full"
-          >
-            <Linkedin className="h-5 w-5" />
-          </Button>
-          <Button
-            variant="ghost"
-            size="icon"
-            className="text-gray-700 hover:text-purple-600 hover:bg-purple-50 rounded-full"
-          >
-            <Mail className="h-5 w-5" />
-          </Button>
+          <a href="https://github.com/Pro-Xrammer" className="text-gray-700 ">
+            <Button
+              variant="ghost"
+              size="lg"
+              className=" hover:text-pink-300 hover:bg-white/10 p-4 rounded-full"
+            >
+              <Github className="h-8 w-8" />
+            </Button>
+          </a>
+          <a href="https://www.linkedin.com/in/akmal-hussain-a1a4a6354" className="text-gray-700">
+            <Button
+              variant="ghost"
+              size="lg"
+              className=" hover:text-pink-300 hover:bg-white/10 p-4 rounded-full"
+            >
+              <Linkedin className="h-8 w-8" />
+            </Button>
+          </a>
+          <a href="https://mailto:akmalhuss313@gmail.com" className="text-gray-700">
+            <Button
+              variant="ghost"
+              size="lg"
+              className=" hover:text-pink-300 hover:bg-white/10 p-4 rounded-full"
+            >
+              <Mail className="h-8 w-8" />
+            </Button>
+          </a>
         </div>
 
         {/* Mobile Menu Button */}
@@ -100,57 +105,59 @@ export function Navbar() {
             {isOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
           </Button>
         </div>
-      </div>
+      </div >
 
       {/* Mobile Navigation */}
       <AnimatePresence>
-        {isOpen && (
-          <motion.div
-            initial={{ opacity: 0, height: 0 }}
-            animate={{ opacity: 1, height: "auto" }}
-            exit={{ opacity: 0, height: 0 }}
-            className="md:hidden bg-white border-t border-gray-100 shadow-lg"
-          >
-            <div className="container mx-auto px-6 py-4">
-              <nav className="flex flex-col space-y-4">
-                {navLinks.map((link) => (
-                  <Link
-                    key={link.name}
-                    href={link.href}
-                    className="text-gray-700 hover:text-purple-600 font-medium py-2 transition-colors"
-                    onClick={() => setIsOpen(false)}
-                  >
-                    {link.name}
-                  </Link>
-                ))}
-                <div className="flex space-x-4 pt-4 border-t border-gray-100">
-                  <Button
-                    variant="ghost"
-                    size="icon"
-                    className="text-gray-700 hover:text-purple-600 hover:bg-purple-50 rounded-full"
-                  >
-                    <Github className="h-5 w-5" />
-                  </Button>
-                  <Button
-                    variant="ghost"
-                    size="icon"
-                    className="text-gray-700 hover:text-purple-600 hover:bg-purple-50 rounded-full"
-                  >
-                    <Linkedin className="h-5 w-5" />
-                  </Button>
-                  <Button
-                    variant="ghost"
-                    size="icon"
-                    className="text-gray-700 hover:text-purple-600 hover:bg-purple-50 rounded-full"
-                  >
-                    <Mail className="h-5 w-5" />
-                  </Button>
-                </div>
-              </nav>
-            </div>
-          </motion.div>
-        )}
-      </AnimatePresence>
-    </header>
+        {
+          isOpen && (
+            <motion.div
+              initial={{ opacity: 0, height: 0 }}
+              animate={{ opacity: 1, height: "auto" }}
+              exit={{ opacity: 0, height: 0 }}
+              className="md:hidden bg-white border-t border-gray-100 shadow-lg"
+            >
+              <div className="container mx-auto px-6 py-4">
+                <nav className="flex flex-col space-y-4">
+                  {navLinks.map((link) => (
+                    <Link
+                      key={link.name}
+                      href={link.href}
+                      className="text-gray-700 hover:text-purple-600 font-medium py-2 transition-colors"
+                      onClick={() => setIsOpen(false)}
+                    >
+                      {link.name}
+                    </Link>
+                  ))}
+                  <div className="flex space-x-4 pt-4 border-t border-gray-100">
+                    <Button
+                      variant="ghost"
+                      size="icon"
+                      className="text-gray-700 hover:text-purple-600 hover:bg-purple-50 rounded-full"
+                    >
+                      <Github className="h-5 w-5" />
+                    </Button>
+                    <Button
+                      variant="ghost"
+                      size="icon"
+                      className="text-gray-700 hover:text-purple-600 hover:bg-purple-50 rounded-full"
+                    >
+                      <Linkedin className="h-5 w-5" />
+                    </Button>
+                    <Button
+                      variant="ghost"
+                      size="icon"
+                      className="text-gray-700 hover:text-purple-600 hover:bg-purple-50 rounded-full"
+                    >
+                      <Mail className="h-5 w-5" />
+                    </Button>
+                  </div>
+                </nav>
+              </div>
+            </motion.div>
+          )
+        }
+      </AnimatePresence >
+    </header >
   )
 }

@@ -654,27 +654,33 @@ export default function Portfolio() {
             </motion.div>
 
             <motion.div variants={fadeInUp} className="mt-16 flex justify-center space-x-8">
-              <Button
-                variant="ghost"
-                size="lg"
-                className="text-white hover:text-pink-300 hover:bg-white/10 p-4 rounded-full"
-              >
-                <Github className="h-8 w-8" />
-              </Button>
-              <Button
-                variant="ghost"
-                size="lg"
-                className="text-white hover:text-pink-300 hover:bg-white/10 p-4 rounded-full"
-              >
-                <Linkedin className="h-8 w-8" />
-              </Button>
-              <Button
-                variant="ghost"
-                size="lg"
-                className="text-white hover:text-pink-300 hover:bg-white/10 p-4 rounded-full"
-              >
-                <Mail className="h-8 w-8" />
-              </Button>
+              <a href="https://github.com/Pro-Xrammer">
+                <Button
+                  variant="ghost"
+                  size="lg"
+                  className="text-white hover:text-pink-300 hover:bg-white/10 p-4 rounded-full"
+                >
+                  <Github className="h-8 w-8" />
+                </Button>
+              </a>
+              <a href="https://www.linkedin.com/in/akmal-hussain-a1a4a6354">
+                <Button
+                  variant="ghost"
+                  size="lg"
+                  className="text-white hover:text-pink-300 hover:bg-white/10 p-4 rounded-full"
+                >
+                  <Linkedin className="h-8 w-8" />
+                </Button>
+              </a>
+              <a href="https://mailto:akmalhuss313@gmail.com">
+                <Button
+                  variant="ghost"
+                  size="lg"
+                  className="text-white hover:text-pink-300 hover:bg-white/10 p-4 rounded-full"
+                >
+                  <Mail className="h-8 w-8" />
+                </Button>
+              </a>
             </motion.div>
           </motion.div>
         </div>
@@ -695,22 +701,22 @@ export default function Portfolio() {
               <h4 className="font-bold mb-4">Quick Links</h4>
               <ul className="space-y-2 text-gray-400">
                 <li>
-                  <a href="#" className="hover:text-white transition-colors">
+                  <a href="#about" className="hover:text-white transition-colors">
                     About
                   </a>
                 </li>
                 <li>
-                  <a href="#" className="hover:text-white transition-colors">
+                  <a href="#projects" className="hover:text-white transition-colors">
                     Projects
                   </a>
                 </li>
                 <li>
-                  <a href="#" className="hover:text-white transition-colors">
+                  <a href="#services" className="hover:text-white transition-colors">
                     Services
                   </a>
                 </li>
                 <li>
-                  <a href="#" className="hover:text-white transition-colors">
+                  <a href="#contact" className="hover:text-white transition-colors">
                     Contact
                   </a>
                 </li>
@@ -720,12 +726,12 @@ export default function Portfolio() {
               <h4 className="font-bold mb-4">Connect</h4>
               <ul className="space-y-2 text-gray-400">
                 <li>
-                  <a href="#" className="hover:text-white transition-colors">
+                  <a href="https://github.com/Pro-Xrammer" className="hover:text-white transition-colors">
                     GitHub
                   </a>
                 </li>
                 <li>
-                  <a href="#" className="hover:text-white transition-colors">
+                  <a href="https://www.linkedin.com/in/akmal-hussain-a1a4a6354" className="hover:text-white transition-colors">
                     LinkedIn
                   </a>
                 </li>
@@ -735,7 +741,7 @@ export default function Portfolio() {
                   </a>
                 </li>
                 <li>
-                  <a href="#" className="hover:text-white transition-colors">
+                  <a href="https://mailto:akmalhuss313@gmail.com" className="hover:text-white transition-colors">
                     Email
                   </a>
                 </li>
