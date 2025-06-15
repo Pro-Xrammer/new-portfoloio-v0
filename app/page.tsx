@@ -98,7 +98,7 @@ const projects = [
     title: "E-Commerce Platform",
     description:
       "Modern shopping experience with Next.js, featuring cart management, payment integration, and responsive design.",
-    image: "/ecom.png",
+    image: "/ecom.PNG",
     tech: ["Next.js", "Tailwind", "Stripe", "Prisma"],
     category: "E-Commerce",
     year: "2024",
@@ -107,7 +107,7 @@ const projects = [
   {
     title: "SaaS Dashboard",
     description: "Analytics dashboard with real-time data visualization, user management, and interactive charts.",
-    image: "/saas.png",
+    image: "/saas.PNG",
     tech: ["React", "Framer Motion", "Chart.js", "Node.js"],
     category: "SaaS",
     year: "2024",
@@ -116,7 +116,7 @@ const projects = [
   {
     title: "Brainwave Website",
     description: "Animated portfolio showcasing creative work with smooth transitions and optimized performance.",
-    image: "/brain.png",
+    image: "/brain.PNG",
     tech: ["Next.js", "Tailwind", "Framer Motion", "MDX"],
     category: "Portfolio",
     year: "2023",
@@ -125,7 +125,7 @@ const projects = [
   {
     title: "Task Management App",
     description: "Collaborative project management tool with drag-and-drop functionality and team features.",
-    image: "/travel.png",
+    image: "/travel.PNG",
     tech: ["React", "TypeScript", "Tailwind", "Supabase"],
     category: "Productivity",
     year: "2023",
@@ -134,7 +134,7 @@ const projects = [
   {
     title: "Real Estate Platform",
     description: "A real estate platform offering verified land listings in Gilgit-Baltistan for residential, commercial, and investment purposes.",
-    image: "/real.png",
+    image: "/real.PNG",
     tech: ["Next.js", "Tailwind", "Mapbox", "Sanity"],
     category: "Real Estate",
     year: "2024",
@@ -143,7 +143,7 @@ const projects = [
   {
     title: "Quick Funds",
     description: "Quick Funds is a loan service platform designed to help users access personal, business, or auto loans quickly and efficiently.",
-    image: "/quick.png",
+    image: "/quick.PNG",
     tech: ["React", "Node.js", "MongoDB", "Socket.io"],
     category: "Education",
     year: "2023",
