@@ -514,7 +514,7 @@ export default function Portfolio() {
                     <Card className="overflow-hidden border-0 shadow-lg hover:shadow-2xl transition-all duration-500 bg-white">
                       <div className="aspect-video overflow-hidden relative">
                         <img
-                          src={project.image || "/placeholder.svg"}
+                          src={project.image}
                           alt={project.title}
                           className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-110"
                         />
