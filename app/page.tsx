@@ -28,6 +28,13 @@ import { Button } from "@/components/ui/button"
 import { Card, CardContent } from "@/components/ui/card"
 import { Badge } from "@/components/ui/badge"
 import { Navbar } from "@/components/navbar"
+import { Poppins } from 'next/font/google'
+
+const poppins = Poppins({
+  subsets: ['latin'],
+  weight: ['400', '600', '700'], // Choose weights you need
+  display: 'swap',
+})
 
 const fadeInUp = {
   initial: { opacity: 0, y: 60 },
